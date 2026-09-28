@@ -1,0 +1,283 @@
+CURSO APROVAÇÃO AVANÇADA
+
+- COMO USAR INFO CC BY; Nt. PARTE 1
+
+>>> 1º O QUE É UM BIN, E COMO SE IDENTIFICA UMA BIN?
+
+A sigla se refere à expressão em inglês Bank Indetification Number, que significa “Número de Identificação Bancária. A identificação do BIN do cartão de crédito é bem simples, ele corresponde aos 6 primeiros números do cartão. Os outros números que compõem a sequência servem para identificar a conta individual que está vinculada àquele cartão. Somente o último dígito é diferente, ele funciona como um dígito verificador. Por tanto, existe uma fórmula matemática, chamada de algorítimo de Luhn, com a qual você pode encontrar o dígito verificador jogando os demais dígitos. Assim, se você não encontrar o mesmo dígito, é possível concluir que o cartão não possui um número válido.
+
+>>> Entendendo o BIN
+
+Os seis números que compõem o BIN ou IIN de um cartão têm significados importantes para quem sabe analisá-los. O primeiro dígito, por exemplo, é o Identificador da Indústria Principal. Assim, ele indica qual é o setor da empresa que emitiu o cartão.
+
+>>> 2º O QUE SIGNIFICA O CÓDIGO VERIFICADOR DO CARTÃO? o código verificador é uma sequência numérica encontrada em todos os cartões de crédito.
+
+Ela é diferente de outros números do cartão porque não é impressa em alto relevo e costuma ficar um pouco mais “escondida”, com caracteres menores.
+
+Nos cartões de crédito com as bandeiras Diners, Mastercard e Visa, o código tem apenas 3 dígitos e normalmente está impresso na parte posterior do cartão, abaixo da tarja magnética. Para os cartões da American Express, são 4 dígitos de código verificador localizados na parte da frente do cartão, geralmente à direita, acima do número e do nome do titular.
+
+>>> Os códigos podem ser chamados por outros nomes, conforme a operadora:
+
+>> Cartão Visa – CVV2 (Card Verification Value 2) –são três dígitos na parte de trás do plástico;
+
+>> Cartão Mastercard – CVC2 (Card Validation Code) – também são apenas três dígitos impressos nas costas do cartão;
+
+>> Cartão Diners – CID (Card Identification Number) – código composto por três números localizados atrás do cartão;
+
+>> Cartão Amex – CID (ou Unique Card Code) – são diferentes dos demais e possuem o código na parte da frente do cartão, composto por 4 dígitos. >>> VAMOS AGORA PARA CONTEÚDO TIPOLOGIA DAS BINS
+
+O número de identificação do emissor (IIN) é os primeiros dígitos de um número de cartão de pagamento emitido por uma instituição financeira . O número de identificação do emissor é exclusivo do emissor e de seu provedor de rede parceiro. Isso ajuda a identificar a rede de processamento usada para as transações do cartão. O código de verificação do cartão (CVC) são os três ou quatro dígitos do código de segurança do cartão de crédito e que não está gravado no cartão junto aos números frontais, impedindo sua impressão do recibo e que alguém sem esses números tente realizar alguma transação utilizando seu cartão de crédito.
+
+Os cartões Visa, MasterCard e Diners Club têm um código de três dígitos localizado no lado superior direito da faixa de assinatura no verso do cartão. Esse número ajuda a prevenir fraudes e evitar que o usuário seja vítima de algum tipo de golpe com cartões de crédito.
+
+Toda transação online com cartões de crédito utiliza deste CVC para executar a operação, dando uma camada de proteção que garante que a pessoa tenha de estar com o cartão em mãos para concretizar a transação.
+
+Outras empresas de cartão que não as supracitadas podem utilizar códigos ligeiramente diferentes para verificação, com nomes diferentes também, como Card Security Code (CSC), Card Verification Data (CVD), Card Verification Value (CVV or CVV2), Card Verification Value Code (CVVC), Card Verification Code (CVC or CVC2), Verification Code (V-code or V code), Card Code Verification (CCV), ou Signature Panel Code (SPC).
+
+>>> VAMOS AGORA PARA CONTEÚDO TIPOLOGIA DAS BINS
+
+O número de identificação do emissor (IIN) é os primeiros dígitos de um número de cartão de pagamento emitido por uma instituição financeira . O número de identificação do emissor é exclusivo do emissor e de seu provedor de rede parceiro. Isso ajuda a identificar a rede de processamento usada para as transações do cartão.
+
+>>> O que é um 'Número de Identificação do Emissor (IIN) ?
+
+O número de identificação do emissor é os primeiros dígitos de uma sequência de números criados para fornecer um identificador único de cartão de pagamento para os clientes. O sistema de numeração permite que um cartão de crédito, débito ou outro cartão de pagamento seja identificado como tendo sido emitido através de uma rede de processamento por uma instituição financeira. O número é usado apenas para identificar a rede de cartões e não é usado para identificar um produto, serviço ou região específica associada ao emissor do cartão.
+
+Alguns sites, precisam que você conheça bem os tipos de cartão, seus limites, e como funciona o sistema anti fraude O primeiro dígito de um número de cartão de crédito é o Identificador Principal da Indústria (MII) (ver ISO / IEC 7812 ), que representa a categoria de entidade que emitiu o cartão.
+
+>>> Os dígitos da MII representam as seguintes categorias de emissores: >> 0 - ISO / TC 68 e outras atribuições futuras do setor
+
+>> 1 - Companhias Aéreas
+
+>> 2 - Linhas aéreas e outras atribuições futuras do setor
+
+>> 3 - Viagens e entretenimento e bancário /financeiro
+
+>> 4 - Bancário e financeiro
+
+>> 5 - Bancário e financeiro
+
+>> 6 - Merchandising e bancário / financeiro
+
+>> 7 - Petróleo e outras atribuições futuras do setor
+
+>> 8 - Assistência médica, telecomunicações e outras atribuições futuras do setor
+
+>> 9 - Designação Nacional Por exemplo, a American Express , a Diner's Club , a Carte Blanche e a JCB estão na categoria de viagem e entretenimento; VISA , MasterCard e Discover estão na categoria bancária e financeira
+
+>>> TIPOLOGIA DOS CARTÕES DE CREDITO
+
+>> A DIFERENÇA ENTRE OS CARTÕES STANDARD, CLASSIC, GOLD, PREMIER ,PLATINUM, BLACK, INFINITY
+
+Visa e Mastercard é um cartão que oferece vantagens como viagens, restaurantes e etc é caracterizado pelo numero inicial 4.
+
+O Mastercard é um cartão que oferece vantagens como descontos exclusivos em locais, e é caracterizado pelo numero inicial 5.
+
+Os cartões visa e mastercard podem se diferencia pelos diferentes tipos, tais como: >> >> >> >> >> >> >> >> >>
+
+Cartões Standard Cartões Classic Cartões Premier Cartões Gold Cartões Platium Cartões Black Cartões Corporate, Cartões Bussiness (Novo) Cartões Infinity
+
+Cada tipo de cartão tem uma certa peculidariedade, e diferente tipos de limites, e valores iniciais.
+
+>>> Vamos começar com: >> Cartão Standard - é aquele cartão para que pessoas que estão iniciando sua vida com o primeiro cartão de credito, muito conhecido por ser oferecido por lojas, de eletronicos, postos de gasolina, calçados, é aquele cartão voltado para pessoal com baixa renda, e seu limite é de no maximo 800,00 reais.
+
+>> Cartão classic - é uma variancia do cartão Standart, é quando este cliente já tem um poder aquisitivo um pouco maior, porem só pode ser solicitado por um banco,e nunca uma loja, porem ele tem um limite maximo ainda baixo, são para pessoas que não quererm se comprometer muito com os valores, então seu limite maximo é de 1,2mil a 1,5 mil.
+
+>> Cartão Gold - é uma variancia do cartão Classic, porem já são clientes com um poder aquisitivo um pouco maior, geralmente são aqueles clientes que gostam de viajar, a maioria dos cartões GOLD são internacionais, porem seu limite inicial pode variar de 1,5k a 2,5k em tese e na maioria das vezes, porem seu limite pode alternar e chegar ate o valor de 4k, isso quando o cliente solicita o aumento do poder de compra, onde geralmente e checado e comprovado algo, assim esse cartão se torna um cartão Premier, porem com o nome de Gold, onde pode chegar ate 4k, ou 4,5 k.
+
+>> Cartão Premier - é uma variancia do cartão GOLD, porem pode ser solicitado por 02 opções, sendo que uma o cliente pede para aumentar o limite do seu cartão GOLD, porem continua GOLD, mais no sistema é Premier, ou ele pode solicitar outro cartão e este já vem Premier, os valores podem variar de 3k a 4 ou 4,5 k, caso o cliente peça para aumentar o limite, este limite pode aumentar ate 30%, e a sua reserva tecnica pode chegar ate 15% do valor execedido.
+
+>> Cartão Black - São para pessoas de capital financeiro maior, que gostam de viajar muito , sem se preocupar com valor, geralmente quem tem um Black, é porque é filho de alguém que tem um infinity, ou que gosta de ter um controle máximo de gastos, o valor da Black varia de 9 a 15k podendo estender até 18k no máximo.
+
+>> Cartão business, é 50% do limite do Corporate, também voltado para empresas. >> Já o cartão infinity, esse pode chegar até o valor de R$ 1 milhão de reais, usado por grandes empresários, e principalmente políticos.
+
+>> Cartão Corporate, voltado para pessoa jurídica que varia de 14 a 140 mil reais.
+
+>>> O que é CASH BACK ?
+
+Cash Back, é uma reserva de saldo usado para se defender dos nossos Golpes 171, todas as empresas possuem um cash back, porém existe empresas que possuem um cash back alto e outras que possuem o cash back baixo ou inexistente, geralmente as empresas que possuem o cash back alto, elas destinam de 10 a 20% do seu lucro para que possa aguentar os golpes com fraudes na internet. Um exemplo clássico é o Site ponto frio, que destina 20% do seu cash back para fraudes, são cerca de 20 milhões de reais destinados a fraude. Exemplos de sites que possuem Cash Back alto : Walmart, ponto frio, Netshoes, Sephora, dafiniti, Privalia, Saraiva, Submarino, Centauro, Ifood, Uber, Google Play, e outros que no decorrer irei falando.
+
+>>> Cash back baixo:
+
+Destinam de 2% a 8% no máximo exemplo: Casas Bahia, Magazine Luiza, novo mundo, esses sites podem entrar em contato para tentar reativar os bens, por isso não recomendo esses sites.
+
+>>> TELA FAKE ? significado em inglês, de falso, trata-se de uma página falsa criada com o intuito de coletar seus dados de cartão de crédito ou de redes sociais. A tela fake ainda é bastante usada no golpe do 171, pois muitas pessoas desatentas caem facilmente neste golpe, e a grande maioria caem através de promoções citadas em mídias sociais como o Facebook, onde o hacker, joga um anúncio atrativo de determinado site com um preço atrativo, a vítima clica no site, efetua a compra e automaticamente seus dados são coletados.
+
+Alguns sites para quem desejar obter telas fakes gratuitas, porém dou a dica de não baixarem em seus computadores, dou a dica de irem na Lan house e fazer o teste, e nunca entre com seus dados do Google ou Facebook, se caso necessitar, faça um Facebook falso e uma outra conta do Google própria para entrar em sites duvidosos.
+
+>>> O que é um Gerador de Crédito ?
+
+Na internet estão cheios desses geradores de crédito, Esses geradores tem como finalidade para uso e teste de programas em desenvolvimento, porém um grande aliado para quem está iniciando no 171, que queira conseguir CC que estejas funcionando, porém o risco é muito alto de se achar um CC valida, pois a grande maioria dessas informações geradas são falsas, ou info bloqueada, ou queimadas, mesmo info válidas que possuem pouco ou um saldo maior, a cada 1000 info gerada apenas 2 funcionam valores de até 300 reais.
+
+A cada 10.900 info gerada 8 funcionam, sendo que 7 deram valores pequenos e 1 que aprove até 1k. Porém a mão de obra para testar todas é altíssimo e requer muito tempo, mais se vc tiver esse tempo, será algo enriquecedor para seu aprendizado. As info geradas na minoria e as que estão boas, são oriundas de teste de checkers em sites online gratuitos feito por um hacker, que acaba jogando está info na rede de internet.
+
+>>> O que é um ANJO ?
+
+Anjo são aplicativos de SMS que avisão os donos do cartão de crédito em situações de compra e movimentação financeira. Os anjos são os maiores vilões para o 171, pois os anjos eles fazem com que a CC seja bloqueada, até mesmo depois do ato da compra, pois o dono do cartão cancelou o cartão.
+
+>> STANDARD - o risco de ter um anjo varia de 5% a 10 % ou as vezes não tem risco. porem na maioria das vezes o risco chega a quase zero.
+
+>> CLASSIC - o risco de ter um anjo varia de 5% a 10%, porem tambem como o tema acima pode ser que seja ate quase 0%, de ter.
+
+>> PREMIER - o risco de ter anjo varia de 8% a 16%, porem são raros os casos da info não aprovar, mais tudo tem seu risco.
+
+>> GOLD - o risco de ter anjo varia de 16% a 30% , porem já é um pouco mais comum de ter anjo, tudo vai depender da sua velocidade de aprovação e aprovar em um site super rapido, que seja rapido em sua entrega, para que não vacile.
+
+>> PLATIUM - o risco de ter anjo é alto, varia de 30% a 50%, porem já é mais comum em ter, e cerca de 15% destes cartões possume token do visa verifylde, ou mastercard verifylde
+
+>> BLACK - o risco de ter anjo é alto, e varia de 50% a 70%, porem já é mais comum em ter, e cerca de 40% destes cartoes possuem token, por isso é bom ele ser consultavel para não ter problema com ele.
+
+>> CORPORATE - o risco de ter anjo é muito alto varia de 70% a 90%, pois trata-se de um cartão empresarial, e cerca de 70% possuem token BUSINESS - igual ao criterio acima, porem esse só liberado com o token autorizado pelo CARTÃO CORPORATE, dependendo do valor da compra.
+
+>> INFINITY - esse é extremamente alto o risco de ter anjo, ele é cerca de 99% de ter um anjo.Porem existe criterios de como burla este tipo de sistema. Uma forma bastante usada, é de você ligar para a operadora com os dados do bico, e fazer o cancelamento da linha, como se houvesse o roubo, e ai você terá chances de suas aprovações serem aprovadas.
+
+CURSO - COMO USAR INFO CC BY; DENVER. PARTE 2.
+
+AGORA VAMOS A OUTRO CONTEÚDO
+
+>>> TIPOS DE FRAUDES
+
+>> >> >> >>
+
+? FRAUDE EFETIVA ? FRAUDE COM O CARTÃO ? FRAUDE AMIGA ? CHARGEBACK
+
+Fraudes existem e são um problema para seu e-commerce portanto, é preciso tomar ações para que elas sejam reduzidas. Infelizmente, não existe uma fórmula que garanta em 100% que seu e-commerce não será vítima de fraudes, mas é preciso diminuí-las. >> Existem algumas ferramentas eficazes para isso. As ferramentas antifraudes utilizam de redes neurais e outras técnicas de inteligência artificial para analisar as informações e decidir se autorizam ou não a compra.
+
+>>> Listamos as tecnologias mais comuns em ferramentas de sistemas antifraude: >> Validação de código de segurança dos cartões de crédito: solicita a inserção daquele código que está atrás do cartão. Esse código pode variar de bandeira para bandeira, mas é um dado a mais para comprovar se o cartão é verdadeiro e proteger sua loja.
+
+>> Rastreamento dos dispositivos de compra: essa ferramenta identifica a origem da compra. Nesse caso é feita uma análise da geolocalização da pessoa que está comprando. Isso funciona para verificar se a pessoa não está em um país que pode ser considerado suspeito. Essa análise pode ser feita para cidades e estados também ou qualquer outro parâmetro regional. >> Serviço de verificação de endereço: que compara os dados inseridos pelo cliente (como endereço de entrega) com aqueles presentes no banco de dados da operadora do cartão e do banco. Também comparam o endereço de pagamento com o de entrega.
+
+>> Registros em bancos de dados: de sua empresa, do sistema antifraude ou mesmo de outras empresas. Nessa ferramenta são confrontados todos os dados possíveis relacionados ao perfil do cliente, seu histórico e outras informações. Se as informações divergirem significativamente, é provável que seja uma fraude e a transação é, portanto, negada. >> Definição de grau de risco na venda de um produto: existem ferramentas que permitem que se defina o grau de risco na aquisição de determinados produtos, como por exemplo um celular, assim, sua “sensibilidade” à fraude muda de acordo com a probabilidade de fraude do produto em questão.
+
+>>> VAMOS AS DEFINIÇÕES
+
+>> O QUE É AUTO-FRAUDE? ? Este tipo de fraude acontece quando o próprio dono do cartão realiza a compra e recebe o produto, mas até 180 dias depois ele contesta essa negociação, alegando que não comprou, normalmente, esta é uma atitude feita por má fé. Infelizmente, é uma situação muito comum e que não tem como ser identificada pelo gestor de e-commerce.
+
+>>> Fraude efetiva e fraude com cartão: semelhanças e diferenças o que é fraude efetiva ? A fraude efetiva, também conhecida como roubo de identidade, se caracteriza pelo roubo da informação pessoal de alguém e subsequente uso destes dados para a obtenção de benefícios econômicos. Os fraudadores podem obter dados como RG, CPF, datas de nascimento e detalhes de contas bancárias e cartões de crédito. A seguir, eles utilizam os dados roubados para realizar transações fraudulentas assumindo a identidade da vítima.
+
+A informação roubada pode ser obtida através de diferentes fontes, incluindo táticas de phishing, software spyware, contas de redes sociais e até mesmo através de extratos bancários antigos jogados no lixo sem o devido cuidado. Os dados roubados podem ser usados para conseguir acesso às contas bancárias ou cartões de crédito da vítima ou para abrir novas contas.
+
+>>> O que é fraude com cartão ? Geralmente, a fraude com cartão se refere ao uso da informação roubada de cartões de crédito para realizar compras não autorizadas, principalmente em lojas online. Naturalmente, ela também ocorre fora do mundo digital, por exemplo, um batedor de carteira pode utilizar o cartão roubado em comércios tradicionais, como lojas, supermercados ou restaurantes. No entanto, com o amplo uso dos cartões com chip, que requerem senha para completar uma transação, a fraude de cartão não presente se torna cada vez mais frequente.
+
+>> Principal diferença entre fraude efetiva e fraude com cartão como podemos ver nas descrições acima, estes dois crimes não são a mesma coisa. Enquanto a fraude com cartão pode ser parte da fraude efetiva, esta última pode causar muito mais dano à vítima. A principal diferença entre ambos tipos de fraude é que a fraude com cartão geralmente afeta somente uma conta. Já a fraude efetiva pode levar a um problema de crédito muito mais grave, já que o fraudador pode abrir diversas contas e linhas de crédito usando o nome da vítima.
+
+>>> Afinal, como funciona o antifraude ? Em uma empresa que efetua a análise de fraude, são efetuadas diversas validações com os dados enviados. Cada empresa tem seu próprio sistema, então, todo o processo pode variar de acordo com cada antifraude. Existem dois fluxos de análise de fraude, a análise automática e a análise manual
+
+>> Análise Automática:
+
+São efetuadas algumas rotinas de verificação como análise dos dados do comprador, do cartão de crédito e, em alguns casos, até dos dados do carrinho de compras e da loja que está vendendo os produtos.
+
+>> Análise Manual: Geralmente, esse processo é baseado em uma análise visual dos dados e na confirmação do comprador. Essa confirmação pode ser feita até via telefone de uma forma genérica, o antifraude analisa os dados do comprador, redes sociais, o valor da compra, a localização e, muito importante, o perfil de compra do consumidor. O cruzamento destes dados vão indicar se um cliente é legítimo ou não.
+
+>>> Por que acontecem as fraudes ?
+
+As fraudes acontecem devido a uma grande quantidade de vazamento de informações. Existem hackers especializados em roubos de dados pessoais na internet para efetuar estes tipos de golpes. Eles roubam as informações de clientes legítimos (nome, CPF, endereço, dados dos cartões…) e as usam para fazer compras online. No mundo físico, o cliente deve inserir sua senha, que é autenticada em uma maquininha (POS), para confirmar uma compra. No mundo virtual, essa senha é substituída pelo CVV (código de verificação), que são os 3 números atrás do cartão. No entanto, o CVV também pode ser roubado e, por isso, as fraudes são mais comuns em compras virtuais. Identificar se o comprador é, de fato, o verdadeiro portador do cartão é um desafio para muitos lojistas. Embora a principal vítima seja a pessoa que teve seus dados roubados, o lojista também sai perdendo com as fraudes. Isso acontece porque quando um cliente não reconhece uma compra, o lojista sofre um chargeback.
+
+>> O que é um chargeback ? Chargeback é o nome que o mercado de venda online deu para a reversão de uma venda feita por cartões. Um cliente fraudado pode acionar o banco informando o não reconhecimento da compra, e a loja deverá devolver o valor total do pedido. Esta devolução de dinheiro é o que chamamos de chargeback e pode acontecer por vários motivos. O cliente pode ter tido o cartão roubado, os dados clonados ou o fraudador pode usar os próprios dados e simular uma fraude. Em muitos casos, o produto já foi entregue e o lojista perde o produto e o dinheiro da venda. Em todos os casos, o lojista é lesado e tem que arcar com todos os custos da fraude.
+
+>>> AGORA UMA PERGUNTA, POR QUE TEMOS QUE APRENDER ISSO? POR QUE SABER SOBRE SISTEMA ANTI FRAUDES?? Pois existem sistemas de anti fraudes muito complexos, que faz com que você fique com raiva, perca tempo, e perca dinheiro. Pois existem sites que fazem com que o cartão usado na fraude seja bloqueado aqui ensinarei quais sistemas anti fraudes deveremos ter cuidado. Esses são os primórdios do mundo 171.
+
+CURSO DE 92HRS - COMO USAR INFO CC BY; DENVER. PARTE 3 >>> CONTEÚDO AGORA QUE VIMOS UM POUCO SOBRE OS TIPOS DE FRAUDES, VAMOS FALAR AGORA UM POUCO SOBRE O SISTEMA DE FRAUDE.
+
+MUITOS ME PERGUNTAM QUAL A IMPORTANCIA DE CONHECER SOBRE ISSO, ENTÃO EU DIGO, A IMPORTANCIA É DE VOCE FAZER UMA APROVAÇÃO DE QUALIDADE CONHECENDO TODO O SISTEMA QUE ESTA OPERANDO NAQUELE RESPECTIVO SITE, QUE VOCE ESTA ACESSANDO. COMO VIMOS, FALEI UM POUCO DO QUE SE TRATA, O SISTEMA ANTI FRAUDES, DO EHUB, ESSE SISTEMA DE ANTI FRAUDE NA INTERNET POSSUI UM CODIGO FONTE SELADO, E CRIPTOGRAFADO ATRAVES DE ALERTA DE ROBOTCS, O QUE SÃO ESSES ROBOTICS ? ROBOTCS, SÃO NANO ROBOS VIRTUAIS, QUE ESTAO ESPALHADOS NA INTERNET, NO QUAL AUXILIAM O SITE, OU PROVEDOR DE EMAIL A PROTEGER SEUS CLIENTES DE POSSIVEIS AMEAÇAS DE FRAUDES DA INTERNET, ALEM DELE SER UM SINALIZADOR DE PROBLEMAS, EM RELAÇÃO A DADOS QUE VOCE ESTA USANDO, E SE ESTES DADOS SÃO VERDADEIROS, OU SE UMA OUTRA PESSOA JÁ USOU ESTES DADOS EM UM OUTRO LUGAR. POIS ESSES ROBOTCS, TRABALHAM EM AÇÃO CONJUNTA JUNTO AO UM BANCO DE DADOS, FORNCEDIDO POR GRANDES SERVIDORES DE CONTEUDO, ONDE ELE FAZ O CASAMENTO DAS INFORMAÇÕES DAQUELE QUE ESTA USANDO O NOME DE LARANJA, PARA SABER SE ESTE INDIVIDUO É VERDADEIRO OU UMA FRAUDE.
+
+>> ELE FAZ ASSIM O CASAMENTO DESTA INFORMAÇÃO JUNTO AO SITE. >> VOU CITAR AQUI UM EXEMPLO SITE PONTO FRIO Você compra um celular com o nome do laranja chamando misterioso, um exemplo. Faz todo o processo da compra e a aprovação, e este cadastro do misterioso, ficou em analise de aprovação. Pois se foi para a analise você já sabe que o site tem robotcs, então ele vai fazer a copilagem de dados no banco de dados que estão conectados entre si. Então como vc entrou no site, automaticamente ele liberar o robotcs, você mesmo pode fazer um teste e garantir que tem um robotcs como falo. Basta você usar um Vpn e vai perceber que no site ponto frio, você estando com o VPN ligado, o site não vai abrir pois ele te obrigar que você fique indefeso, para que ele possa fazer a correta leitura de sua localização, assim vai liberar os cookies de rastreamento para identificar se fez alguma compra nestas próximas 24 horas, por isso a necessidade da limpeza do computador diariamente.
+
+Após você entrar para a analise, o sistema de anti fraude modo 2 é acionado, onde será verificado seus dados, e assim uma pessoa vai entrar em contato, e a aprovação pode demorar em media ate 3 dias uteis. Caso sua compra entre em aguardando pagamento, significa que o robotcs, não achou nada que faça com que seu cadastro seja prejudicado, é como se fosse um pre pagamento. Em seguida você vai receber um e-mail informando que seu pagamento foi pre aprovado, e isso é bom, porem o sistema vai da uma media de 12 horas ou no mínimo 2 horas, para saber se você comete algum vacilo na validação dos dados, por conta do cokies de rastreamento.
+
+Ai vamos supor que você esqueceu de limpar o seu PC fazendo os procedimentos, de limpeza completos, e você acessa o site das casas Bahia, com o mesmo cadastro chamado misterioso, nessa hora, o robocts vai entra em ação novamente, e vai monitorar seus dados no exato instante esperando que cometa algum vacilo, e ai você faz outra compra, sendo com o mesmo cartão de credito, usado na loja anterior, então nesse exato momento que você colocou os dados de pagamento, automaticamente o seu pedido que havia sido feito no ponto frio, é cancelado na mesma hora, e você perde, tanto no ponto frio como o da casa Bahia, e o cartão fica inutilizado, pois o próprio sistema queima na operadora de cartão alegando que é uma fraude. Agora um outro caso, vamos supor que vc limpou o PC de forma cuidadosa, tomou os devidos cuidados, porem o robotc esta ativado mesmo assim, pois esta casando sua informação com o banco de dados. Porem você fez uma compra no site das casas Bahia, que é do grupo pão de açúcar dono da marca ponto frio, porem você fez com cartão diferente, automaticamente seu outro produto que estava aguardando pagamento, muda para analise de pagamento, pois o sistema terá que fazer uma consulta mais aprofundada dos dados que você colocou no sistema, referente a compra do produto.
+
+>> NISSO É IMPORTANTE QUE SEUS DADOS SEJAM FULL, OU SEJA UM CADASTRO DE LARANJA QUE TENHA BOM ESCORE, E QUE NÃO ESTEJA NO SPC OU SERASA.
+
+Depois disso o seu produto vai para a analise, e nessa hora você é pego desprevenido, pois eles vão te ligar na hora mais oportuna possível e te fazer perguntas no nível hard, perguntas mesmo bem difíceis que só o laranja saberia, e ai vc demora responder, gagueja, ou pede para aguarda, na mesma hora eles cancelam o cartão. Ou em alguns casos pedem que você envie uma foto de frente do cartão.Por isso é importante que esteja esperto.
+
+>>> COMO EVITAR QUE ISSO ACONTEÇA ?
+
+Nunca compre em sites que pertençam ao mesmo grupo de empresas Nunca faça o mesmo cadastrado para apenas uma loja. Pois se for acessar uma loja que pertence a um grupo de empresas procure sempre usar cadastros diferentes, Cc diferentes, nunca mesma. E sempre mantenha a atualização do seu antivírus em dias, e uma correta limpeza no histórico de seu computador. Sempre que for fazer um novo cadastro, sempre no final de cada operação, faça uma limpeza no histórico do computador, passe o anti vírus e resete o seu modem para mudar o IP da sua maquina. Formate sua maquina a cada 3 meses, para que ele esteja sempre no ponto de se trabalhar. Ou mude seu computador a cada 3 meses se preferir ou mude o HD a cada 2 meses ou mensalmente, quanto mais cuidado melhor.
+
+>>> CONTEUDO SOBRE COKIES DE RASTREAMENTO, O QUE SÃO É POR QUE DEVO TER CUIDADO ? >> Informações sobre cookies de rastreamento: A finalidade principal dos cookies é identificar usuários e possivelmente preparar páginas da Web personalizadas para eles. Quando você entra em um site que utiliza cookies, pode ser solicitado preencher um formulário fornecendo informações como seu nome e interesses. Essas informações são enviadas para seu navegador da Web como um arquivo de cookie. Da próxima vez em que você acessar o mesmo site, seu navegador enviará o cookie para o servidor da Web. O servidor pode utilizar essas informações para apresentar páginas da Web personalizadas. Cookies de rastreamento, como biscoitos web regular, são pequenos arquivos de texto que são colocados no disco rígido do seu computador quando você navega determinados sites. A diferença é que cookies de rastreamento se instalar no seu computador, mesmo quando você não visita o site que está fornecendo os cookies. Cookies de rastreamento secretamente monitoran sua atividade de navegação na web, rastrear informações pessoais e deve ser tratada. >>> Descubra quais os tipos.
+
+>> Cookies de sessão: São criados e armazenados temporariamente durante uma sessão de navegação em um site e são excluídos do dispositivo do usuário quando o navegador é fechado. Fundamentais para o funcionamento de sistemas onde o usuário tem que navegar de uma página para outra como em uma compra e aulas online, de modo que os detalhes da conta e outras preferências não são perdidos durante a navegação.
+
+>> cookie persistente também conhecido como cookie de rastreamento: É constantemente usado por anunciantes para registrar informações sobre os hábitos de navegação de um usuário na web durante um período determinado de tempo. Além disso, estes cookies são utilizados para ajudar a melhorar a experiência do usuário, armazenando suas preferências (como por exemplo idioma, temas últimas pesquisas) de modo que elas possam ser lembradas em uma próxima visita. Diferente do cookie de sessão, este tipo não é excluído após o navegador ser fechado, e sim em uma data ou depois de um período de tempo específico. Criados para rastrear o comportamento de um usuário
+
+>> Cookies de terceira parte: São criados a partir de um site que não seja o que o usuário acessou. A maior parte destes cookies é gerenciada por grandes corporações especializadas em marketing digital ou grandes bancos de dados privados de usuários. São utilizados pelos sites acessados como fonte para propagandas ou buscas direcionadas. Um único site pode depositar em sua máquina dezenas de cookies de terceira parte. Estes cookies são considerados a grande ameaça a privacidade do usuário.
+
+AI VOCÊ SE PERGUNTA POR QUE EU TENHO QUE CONHECER SOBRE COOKIES DE RASTREAMENTO E O QUE TEM A VER COM APROVAÇÃO ?
+
+VOU COLOCAR ALGUNS MOTIVOS PELOS QUAIS DEVEMOS TER CUIDADOS COM OS COOKIES DE RASTREAMENTO, VEJAM SE ISSO ACONTECE COM VOCE COM FREQUENCIA, OU JÁ ACONTECEU. >> 1º Seu computador esta lento mesmo depois de formatado >> 2º Seu computador demora carregar as paginas de navegação e as vezes trava >> 3º Seu computador aparece muitos anúncios das lojas que visitei frequentemente, ou que aprovei algo. >> 4º Você não esta conseguindo fazer as aprovações, pois o sistema bloquea a conta, ou suspende a forma de pagamento. >> 5º Seu computador esquenta muito, e o processamento de dados na hora da aprovação da um erro.
+
+VAMOS AGORA RESPONDER CADA PERGUNTA COM A LÓGICA >> 1º - o computador quando esta cheio desses cookies de rastreamento, e quando você não tem o cuidado de passar um bom anti vírus na sua maquina, ou um antispyware bom, a sua maquina fica lenta, mesmo que você formate a sua maquina, ela vai melhorar pouca coisa, e logo em seguida o problema reaparece, dificultando em suas aprovações além de que você comece a reprovar as suas aprovações do nada, pois o cookie de rastreamento passou uma informação de uso do seu computador durante o tempo em que você fez as aprovações, aquilo já é suficiente para que a maquina do site identifique o seu ID do Hd e automaticamente cancele tudo o que você aprovou, lhe deixando furioso. Eu no meu caso, sempre troco meu computador a cada 4 meses, e formato ele mensalmente, para que estes cookies indesejados não instalem na minha maquina. Vou citar alguns cuidados que você devera seguir para que isso não ocorra com você. Limpe sua maquina com frequência antes de desliga-la, passe um anti vírus bom de preferencia um pago, com as atualizações em dia, passe um antyspyware que seja bom e atualizado, e quando finalizar faça uma desfragmentação rápida do seu disco rígido, isso vai evitar em 90 por cento que estes danadinhos não infecte sua maquina.
+
+>> 2º O computador quando esta neste estagio, significa que você tem que trocar seu Hd, pois você vai ter problemas com suas aprovações, mesmo que você faça o que lhe citei acima em relação aos cuidados, não surtira efeito, por que se ele esta assim é por que você não tomou os devidos cuidados, ai você diz: Mais eu passei o cc cleaner e limpei o histórico. Ai eu te digo, isso não é suficiente, tem que ser todos os dias, tem que ter o cuidado com sua ferramenta de trabalho. Procure sempre atualizar o seu antivírus.
+
+E nesse caso de lentidão tente formatar o computador, porem ele vai te ajudar no máximo por 1 mês, pois o cookie de rastreamento ficara ativo novamente com a primeira fraqueza do sistema.
+
+>> PERGUNTAS COMO FAÇO PARA QUE O COOKIES DE RASTREAMENTO NÃO SE INSTALE NO COMPUTADOR ? Simples, sempre depois de toda operação, passe o anti vírus, juntamente com o anti spyware, pois essa ferramenta vai eliminar em 99 por cento, nunca 100 por cento.
+
+>> 3º quando começar aparecer muitos anúncios indesejados, significa que sua maquina foi infectada, não só com os cookies de rastreamento, como os robotcs zumbis. O robotcs zumbi é aquele que fica na sua maquina parado no sistema, quando você der o pequeno vacilo ele é reativado, e passa as informações para o site. O anti vírus não consegue detectar pois não se trata de um vírus, porem se você fazer com frequência a desfragmentação de disco, juntamente em passar o anti vírus na maquina, ele pode sair da sua maquina. Porém tem que haver uma cultura de cuidado com sua maquina, para que você não tenha prejuízo quanto as aprovações.
+
+>> 4º neste caso se estiver acontecendo isso, é por que o computador esta infectado, e a melhor maneira para encerrar estes desfecho é você trocar o HD da maquina urgentemente.
+
+5º se o computador estiver esquentando muito, isso foi devido um alto índice de processamento das informações, pois alguns sites de eletrônicos sobrecarregam o processamento da maquina. Neste caso eu indico que faça sempre uma desfragmentação e se possível, mantenha o seu computador em locais próximos de saída de ar, ou perto de um arcondicionado, pois poder de processamento também influi bastante no momento de aprovação de algum produto.
+
+UM BOM APROVADOR TEM QUE ESTA CIENTE QUE SUA MAQUINA É A SUA FERRAMENTA DE TRABALHO, E É NELA QUE PROVEM O SEU SUTENTO, ENTÃO A MAQUINA DEVERA TER BOM ZELO, E DEIXAR ELA SEMPRE EM SEGURANÇA.
+
+UM CONSELHO QUE DOU PARA BOAS APROVAÇÕES, E COMPRAR COMPUTADORES COM UM PODER DE PROCESSAMENTO QUE SEJA BOM.
+
+E BOA MEMORIA TAMBEM. A INTERNET TAMBEM INFLUI NO PODER DE LIBERAÇÃO DE APROVAÇÃO.
+
+PARA TERMINAR O CONTEÚDO, VOU CITAR AS EMPRESAS DO GRUPO PÃO DE AÇUCAR PARA QUE TENHA CUIDADO E NÃO CORRA RISCOS.
+
+SÃO AS MARCAS EXTRA, PONTO FRIO, CASAS BAHIA, MAGAZINE LUIZA, RICARDO ELETRONS, BARATEIRO.COM, BATIRA, ASSAI, E OUTRAS 10 PEQUENAS MARCAS.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+>>> VAMOS FAZER UMA ANALISE SOBRE OS ANTI FRAUDES, DOS PRINCIPAIS SITES.
+
+O SITE DO PONTO FRIO, O SISTEMA ANTI FRAUDE DELE É O EHUB o grupo pão de açúcar é composto pelas lojas, ponto frio, magazine luiza, casas bahia, ricardo elétrons, e outras lojas sistema típico usado em lojas, que possuem mais de uma franquia de lojas ou de comércio eletrônico.
+
+VOU DAR UM EXEMPLO: Deve-se ter muito cuidado com esse tipo, e o por que de você conhecer cada um quando for mais na frente vou falar sobre cada sistema anti fraude de sites pois esse sistema anti fraude, faz o casamento da informação automatica e destaca que ali é uma fraude, e seu produto não é entregue e ainda queima a sua informação, deixando a inutilizada então se voce comprar um produto no ponto frio com uma informação, e usar esta mesma informação que é a cc live, em outro site que pertença ao grupo pão de açucar, automaticamente voce vai queimar a sua cc live, vai perder o seu cadastro, e pode correr o risco de ser investigado por monitoramento remoto virtual pelo ip.
+
+CURSO DE 92HRS - COMO USAR INFO CC BY; DENVER. PARTE 4 >>> VOCÊ JÁ VIU ESSE SELO "COMPRE E CONFIE" ?
+
+essas perguntas são os que eles perguntam em media: NOME COMPLETO, NOME DA MÃE, NOME DO PAI, CPF, RG, ENDEREÇO, ONDE MOROU ANTES, NUMERO DO SEU TITULO DE ELEITOR, ZONA ELEITORAL, QUAL SUA IDADE, QUANDO NASCEU, ONDE NASCEU, É CASADO OU SOLTEIRO, TEM ALGUM PARENTE QUE MORE NA RUA TAL, QUAL SEU EMAIL, E ONDE VOCÊ TRABALHA. Pois é, pois sites que tem este selo, são sites que o possuem um sistema de anti fraude top, ou possuem um sistema ruim fique de olho é de um sistema de anti fraude que faz muitas perguntas, que voce se surpreende pois este selo ai faz perguntas que voce fica doido.
+
+>>> BINCASH É uma plataforma de pagamento parecida com o PagSeguro pois a plataforma tem um sistema anti fraude chamado Konduto vou falar o que seria o KONDUTO Ela faz a identificação por localização. Então Vpn aqui é pedir para queimar a CC. A Konduto é um sistema antifraude inovador, que desenvolveu um método de altíssima precisão para detectar fraudes em transações on-line. A empresa foi a primeira do mundo a monitorar todo o comportamento de navegação e compra de um usuário em um site de e-commerce ou app mobile. Com isso, conseguimos calcular a probabilidade de fraude naquele pedido. Além disso, o sistema também leva em consideração informações “básicas” da análise de risco. Geolocalização, validação dados cadastrais e características do aparelho utilizado na compra (fingerprint), por exemplo. Com isso, gerencia regras condicionais e revisão manual. A plataforma da Konduto colhe muito mais informações do que as demais soluções. Por isso, possui mais insumos para realizar uma análise de risco mais eficaz. Como utiliza algoritmos de inteligência artificial (machine learning), a Konduto realiza o cálculo de risco de uma compra em menos de 1 segundo.
+
+>>> VISA VERIFYLDE E MASTER CODE
+
+São sistema de segurança que visam proteger a integridade das operações na internet a fim de proteger os cartões de clientes através de um token de validação de 4 números, com uma combinação única em sequência, onde em cada transação na internet o dono do cartão precisa colocar o token para a validação da conta. Alguns sites tem parceria com estes sistemas e outros sites que não tem parceria com o sistema, a compra automaticamente é repassado para uma página da visa ou do MasterCard para ser inserida o token, em caso de erro em 3 tentativas a operação é cancelada junto com o cartão. Porém não são todos os sites que aparecem Ela faz a identificação por localização Então Vpn aqui é pedir para queimar a CC.
+
+>>> EHUB ANTI FRAUDE Ehub é anti fraude de sites que são do mesmo grupo de empresas ex: Grupo pão de açucar
+
+>>> SELO CONSUMIDOR. ORG este site é avaliado pelo procon, significa que ele faz a coisas de acordo com as regras do procon, e isso é muito bom para o aprovador ter mais sucesso em seus pedidos.
+
+>>> MAGAZINE LUIZA tem 04 selos, um deles é o compre confie, esse compre confie, pergunta ate qual o nome da sua sogra, então se quiser burlar é bom ter um bom painel para ter todas as respostas na ponta da lingua.
+
+>>> EXTRA vejam que o extra tem o selo Ehub, que é dado para empresas do mesmo grupo, quando você ver este selo se atente a fazer as coisas de forma diferente, tanto de dados, como de info, pois ele pega na hora e detecta a fraude em minutos, são sites bem complicados de se aprovar, porem se voce conhecer bem o sistema, e ter bons dados, boa info e tudo batendo, você terá sucesso neste site, pois ele tem selo ebit ouro que é muito bom, quanto a entrega e logística.
+
+>>> CASAS BAHIA veja que tem o selo Ehub tambem, por isso é bom ter cuidado, com sites que tem o selo ehub, procure saber quais empresas pertencem ao mesmo grupo.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+>> VAMOS FAZER A ANALISE DOS SITES
+
+>> VAMOS COMEÇAR COM AS CASAS BAHIA VEJA QUE O SITE DA CASAS BAHIA POSSUI O SELO EHUB que significa que é uma empresa que pertence ao grupo pão de açúcar, onde devemos ter toda a atenção possível quanto ao cuidado de não colocar qualquer cadastro lá. Veja que possuem o selo do Governo. VEJA QUE TEM O SELO EBIT
+
+>>> AGORA VAMOS A OUTRO SITE VAMOS AO SITE DA NETSHOES pois o seu certificado quase não tem porem o netshoes tem um sistema de criptografia, que identifica os robtics em sua maquina, caso voce não faça uma correta limpeza no seu computador ou celular, e acaba queimando a sua CC live O NETSHOES É BEM FACIL DE APROVAR porem tem uma coisa que ninguem sabe este certificado, ai só significa que a empresa existe na internet, e que é auditada por uma empresa de segurança UMA COISA QUE POUCA GENTE SABE E QUE A MAGAZINE LUIZA COMPROU A NETSHOES ENTÃO FIQUE ATENTO AO SEU ANTI-FRAUDE OK?
+
+ESSAS SÃO ALGUMAS DICAS, QUE VÃO TE LEVAR AO SUCESSO COM APROVAÇÕES.
+
+PARTE 5 Sobre a diferença entre cc/mix/cc full/ consultavel/extraviado/pvc
+
+CC - Um cartão de crédito, apenas os 16 dígitos, data de validade e CVV CC Full - Um cartão de crédito, porém (full) ou seja, completo, com todos os dados do dono, diferente da cc normal que é apenas o número do cartão Mix - MIX são vários cc's misturadas, por isso se chama (mix) você compra o pacote, não a unidade, no mix pode vim de standard até uma Black.
+
+Consultavel - É um cartão de crédito normal, igual o cc, porém tem coisas que diferem, diferente do cc, a consultavel você pode consultar o limite de saldo pelo app por isso o nome (consultavel) além disso pode estar removendo o aviso sms pro dono não saber da compra, pode remover itoken, tirar bloqueio preventivo, pedir adicional, pedir 2via, aumentar o limite Então já vimos que consultavel é top né? Por isso é mais cara que uma cc normal. Extraviado - É um cartão que foi extraviado dos correios, e invés de ir pra casa do dono, foi parar na mãos dos 171, o extraviado é mais caro que a consultavel ainda, pois ele é melhor, o bico nem imagina que você tem ele, não tem acesso a nada dele, só você, você pode tirar o aviso sms, pois por mais que o dono não tenha o cartão em mãos, quando ele pediu o cartão ele ativou o aviso sms pra notificar da chegada do cartão na casa dele, e das compras. O tempo pra estornar também é maior que o da consultavel, mais ou menos 3 meses. Pvc - Esse é o top dos tops, a galera usa muito pra virar em Kineta, porém ser top não quer dizer que seja fácil, ao contrário é bem difícil solicitar PVC, só com esquema e além do esquema você precisa de mais coisas, como dados, editáveis, etc, tudo isso pra pedir 1 PVC, ele é um cartão físico que vai vim nos dados do bico que você usou pra solicitar, você vai poder usar o limite dele em lojas, e onde quiser, pode virar em Kineta também todo o saldo, por isso é o mais queridinho e procurado por todos, mas é muito, mas muito caro mesmo. Enfim essa foi uma explicação dos materiais existentes no 171 que você pode utilizar pra fazer uma aprovação, recomendo usar cc de começo, e depois ir subindo para os matériais mais caros e melhores. Até porque se você é novo no ramo, não vai começar do material mais top, porque o mais top é o mais difícil de usar.
+
+PASSO A PASSO PARA UMA BOA APROVAÇÃO 1- ANTES DE TUDO LIMPE BEM SEU CELULAR (FAÇA UM RESET SE FOR POSSÍVEL, FORMATE ELE E DEIXE TODO VIRGEM) CASO NÃO RESETAR, UTILIZE O APP CCLEANER PARA FAZER UMA LIMPEZA, PASSE ELE 5 VEZES. 2- TENHA UM CHIP VIRGEM TAMBÉM, SEMPRE BOM O CHIP SER VIRGEM E NÃO TER CADASTRO EM NENHUM SITE AINDA 3- DEPOIS DO CELULAR LIMPO VOCÊ VAI IR NO SEU NAVEGADOR E LIMPAR TODO O HISTÓRICO, LIMPA TODO O PERÍODO, MARCA TODAS AS COISAS E LIMPA TUDO. DEPOIS VOCÊ VAI IR ATÉ O SITE DE SUA PREFERÊNCIA, RECOMENDO PROCURAR SITES COM SEGURANÇA FALHA, OU SELO RUIM, JUNTO COM O CURSO EU MANDO 15 SITES FÁCEIS DE APROVAR PARA VOCÊ PODER PRATICAR, LEMBRANDO (LIMPE BEM O SEU CELULAR, TE JURO, SE O CELULAR TIVER SUJO A COMPRA CANCELA, NÃO TEM JEITO)
+
+4- AGORA É HORA DE PEGAR UMA CC BOA, ANTES DE TUDO EU SEMPRE DIGO, TENHA CERTEZA QUE A CC TEM SALDO, OBS: COMPRE COM UM FORNECEDOR BOM, QUE TENHA BASTANTE REFERÊNCIA E QUE OS CLIENTES SEMPRE UPEM VALORES BONS, ENTÃO TESTE A CC ANTES PRA TER CERTEZA QUE TÁ LIVE 5- COMPRE CC QUE VENHA COM NOME E CPF, E DEPOIS ANTES DE FAZER A COMPRA PUXE OS DADOS DO BICO PRA CASO PRECISAR. 6- VAI NO SITE QUE VOCÊ QUER COMPRAR, (LEMBRANDO, NÃO TENTE EM SITES GRANDES AINDA, NEM EM SITES COM PLATAFORMA MERCADO PAGO, OLHE LÁ EMBAIXO NO SITE PRA VER SE TEM ALGO SOBRE MERCADO PAGO, OU PAG SEGURO, ENTÃO SE TIVER, NEM TENTE NESSE SITE POIS AS CHANCES DE NÃO APROVAR SÃO MUITAS. 7- FIQUE 10 MINUTOS NO SITE RODANDO E PROCURANDO ALGO DE SEU INTERESSE, LEMBRANDO, ESCOLHA ALGO ATÉ 200$ DE PRIMEIRA, NUNCA PEÇA ALGO DE 1K LOGO DE CARA POIS TEM MUITAS CHANCES DE NÃO APROVAR, ENTÃO PROCURE COISAS ABAIXO DE 200$, FIQUE 10MIN NO SITE E JOGUE O PRODUTO NO CARRINHO DE COMPRAS, DEPOIS FIQUE MAIS 5 MINUTOS RODANDO PELO SITE COMO SE TIVESSE PROCURANDO MAIS ALGUMA COISA, PRONTO, DEPOIS DESSE TEMPO VOCÊ VOLTA PRO CARRINHO E FINALIZA A COMPRA, O SITE VAI PEDIR PRA VOCÊ CADASTRAR NELE, ENTÃO VOCÊ CADASTRA USANDO OS DADOS DO DONO DO CARTÃO, (POR ISSO É IMPORTANTE VOCÊ TER TODOS OS DADOS DELE, POIS PEDEM CPF E DATA DE NASCIMENTO, TODOS OS SITES PEDEM) VÃO PEDIR EMAIL TAMBÉM, ENTÃO CRIE UM GMAIL COM O NOME DO DONO DA CC EXEMPLO: MARCOS PEREIRA DA SILVA EMAIL: MARCOSPEREIRADASILVA@GMAIL.COM COLOQUE O EMAIL QUE VOCÊ CRIOU, COLOQUE O NÚMERO DE CELULAR VIRGEM E DEPOIS É SÓ COLOCAR UM DROP (DROP É UM ENDEREÇO DE SUA PREFERÊNCIA) VOCÊ PODE COLOCAR O ENDEREÇO DE UM AMIGO, OU IRMÃ, IRMÃO, TIO, PRIMO, AVÔ. TANTO FAZ, SÓ COLOCA OUTRO SEM SER O SEU. AGORA DEPOIS DE VOCÊ TER COLOCADO TODOS OS DADOS CERTINHO, COLOCADO O ENDEREÇO, FINALIZA A COMPRA, VAI EM PAGAR POR CARTÃO DE CRÉDITO E AGORA VOCÊ COLOCA A CC LA LEMBRANDOOOOO (NUNCA COPIE E COLE, SEMPRE ESCREVA TUDO, OS DADOS, O ENDEREÇO, O EMAIL, OS DADOS DO CARTÃO, O NÚMERO A DATA E O CVV, SEMPRE ESCREVA, NUNCA COPIE E COLE)
+
+COLOCA O NÚMERO DO CARTÃO, A DATA E O CVV, DEPOIS COLOCA O QUE PEDIR, AS VEZES PEDEM CPF DE NOVO, E O NOME DO DONO DO CARTÃO, ENTÃO VOCÊ COLOCA LA OS DADOS DO BICO. A COMPRA É BARATA, DE 200$ ENTÃO VOCÊ PODE PARCELAR EM 1X SÓ, OU 2X SE VOCÊ QUISER, MAS PRA COMPRA BARATA ASSIM EU COSTUMO PARCELAR EM 1X. APENAS PARCELE MAIS DE 2X CASO A COMPRA FOR MAIS QUE 400$ DEPOIS FINALIZA SUA COMPRA, ENTRA NO GMAIL QUE VC CRIOU E FICA AGUARDANDO ELES CONFIRMAR. SE A CC TIVER BOA E COM SALDO, VAI APROVAR, CASO CANCELAR O PROBLEMA ESTÁ NA CC, POIS O CELULAR LIMPO E DADOS BATENDO, A CHANCE DE APROVAR É 80%. CASO CANCELAR É REALMENTE A CC. DEPOIS QUE FIZER O PEDIDO VC SÓ AGUARDA ELES CONFIRMAR.
+
+ATENÇÃO. DICAS ABAIXO. Pratique, a prática leva a perfeição, começa comprando um produto de 200 reais, depois vai pra um de 500, e assim vai. Outra coisa que eu ia esquecendo, quando comprar com uma info, não sai passando ela em tudo que é lugar, o banco vai identificar na hora que o usuário não utiliza o cartão 30 vezes num dia com compras naqueles valores. seja cauteloso(a), tá com uma info quente? Faz uma compra de manhã, outra a noite, em sites diferentes. No dia seguinte tenta mais uma. Não sai tentando comprar 20 produtos um atrás do outro, que o que vai acontecer é que o banco vai extornar o pagamento antes mesmo de você receber seu produto! Se você tem muitas infos, eu aconselharia até usar uma info por compra. OBRIGADO POR ADQURIR O CURSO LHE DESEJO SUCESSO EM SUAS APROVAÇÕES. AH E NÃO ESQUECE DE COMPRAR CC COMIGO VIU? ❤ By; Nt

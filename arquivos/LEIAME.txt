@@ -1,0 +1,2 @@
+Coloque aqui os arquivos (.pdf, .txt, .png, .zip, etc.) que você deseja anexar nas postagens pelo comando !painel.
+Todos os arquivos colocados nesta pasta aparecerão automaticamente no menu de seleção do painel no Discord.
