@@ -313,6 +313,9 @@ def parse_color_choice(color_input: str) -> discord.Color:
     return discord.Color.from_rgb(88, 101, 242)
 
 
+IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".gif", ".webp")
+
+
 class EditarTextoModal(discord.ui.Modal, title="✏️ Configurar Post / Embed"):
     def __init__(self, view_ref):
         super().__init__()
@@ -346,6 +349,15 @@ class EditarTextoModal(discord.ui.Modal, title="✏️ Configurar Post / Embed")
         )
         self.add_item(self.webhook_input)
 
+        self.avatar_input = discord.ui.TextInput(
+            label="Foto de Perfil do Webhook (URL Opcional)",
+            placeholder="Cole o link da imagem para o avatar do Webhook",
+            default=self.view_ref.avatar_webhook or "",
+            max_length=300,
+            required=False
+        )
+        self.add_item(self.avatar_input)
+
         self.cor_input = discord.ui.TextInput(
             label="Cor (azul, roxo, verde, vermelho, #HEX)",
             placeholder="Ex: roxo ou #5865F2",
@@ -359,6 +371,7 @@ class EditarTextoModal(discord.ui.Modal, title="✏️ Configurar Post / Embed")
         self.view_ref.titulo = self.titulo_input.value.strip()
         self.view_ref.descricao = self.descricao_input.value.strip()
         self.view_ref.nome_webhook = self.webhook_input.value.strip() or "Central de Conteúdos"
+        self.view_ref.avatar_webhook = self.avatar_input.value.strip() or None
         self.view_ref.cor_nome = self.cor_input.value.strip() or "roxo"
         self.view_ref.cor = parse_color_choice(self.view_ref.cor_nome)
 
@@ -434,6 +447,7 @@ class PainelView(discord.ui.View):
             "💡 Faça o download dos arquivos anexados abaixo para acessar o material completo."
         )
         self.nome_webhook = "Central de Materiais"
+        self.avatar_webhook = None
         self.cor_nome = "roxo"
         self.cor = parse_color_choice(self.cor_nome)
 
@@ -492,13 +506,15 @@ class PainelView(discord.ui.View):
             description=self.descricao,
             color=self.cor
         )
-        if self.arquivos_selecionados:
-            files_list_str = "\n".join([f"• 📄 `{fn}`" for fn in self.arquivos_selecionados])
-            embed.add_field(
-                name="📦 Arquivos Anexados",
-                value=files_list_str[:1024],
-                inline=False
-            )
+
+        # Se houver arquivos de imagem selecionados, incorpora a foto diretamente no corpo do Embed!
+        # Não adiciona o campo 'Arquivos Anexados', pois a foto já aparece integrada ao post.
+        imagens = [fn for fn in self.arquivos_selecionados if fn.lower().endswith(IMAGE_EXTENSIONS)]
+        if imagens:
+            embed.set_image(url=f"attachment://{imagens[0]}")
+            if len(imagens) > 1:
+                embed.set_thumbnail(url=f"attachment://{imagens[1]}")
+
         data_str = get_current_brazil_time_str()
         embed.set_footer(text=f"{self.nome_webhook} • Publicado em {data_str}")
         return embed
@@ -530,13 +546,20 @@ class PainelView(discord.ui.View):
         if not files:
             embed.add_field(
                 name="📁 Arquivos na Pasta `arquivos/`",
-                value="*Nenhum arquivo encontrado. Coloque seus PDFs/TXTs na pasta `arquivos/` e clique em 🔄 Atualizar Arquivos*",
+                value="*Nenhum arquivo encontrado. Coloque seus PDFs/TXTs/Imagens na pasta `arquivos/` e clique em 🔄 Atualizar Arquivos*",
                 inline=False
             )
         else:
             if self.arquivos_selecionados:
-                arq_str = ", ".join([f"`{fn}`" for fn in self.arquivos_selecionados])
-                embed.add_field(name=f"📁 Arquivos Selecionados ({len(self.arquivos_selecionados)})", value=arq_str[:1024], inline=False)
+                imagens = [fn for fn in self.arquivos_selecionados if fn.lower().endswith(IMAGE_EXTENSIONS)]
+                outros = [fn for fn in self.arquivos_selecionados if not fn.lower().endswith(IMAGE_EXTENSIONS)]
+                detalhes = []
+                if imagens:
+                    detalhes.append(f"🖼️ **Foto no Embed:** {', '.join([f'`{img}`' for img in imagens])}")
+                if outros:
+                    detalhes.append(f"📎 **Documentos para Download:** {', '.join([f'`{doc}`' for doc in outros])}")
+                texto_detalhes = "\n".join(detalhes) if detalhes else "*Nenhum arquivo válido selecionado*"
+                embed.add_field(name=f"📁 Arquivos Selecionados ({len(self.arquivos_selecionados)})", value=texto_detalhes[:1024], inline=False)
             else:
                 embed.add_field(name="📁 Arquivos Selecionados", value="*Nenhum selecionado (nenhum anexo será enviado)*", inline=False)
 
@@ -559,12 +582,16 @@ class PainelView(discord.ui.View):
 
     async def on_previa_clicked(self, interaction: discord.Interaction):
         embed_previa = self.build_post_embed()
-        info_arquivos = ""
-        if self.arquivos_selecionados:
-            info_arquivos = f"\n📎 **Arquivos anexados ({len(self.arquivos_selecionados)}):** " + ", ".join([f"`{f}`" for f in self.arquivos_selecionados])
+        files_payload = []
+        for fn in self.arquivos_selecionados:
+            fp = os.path.join(ARQUIVOS_DIR, fn)
+            if os.path.exists(fp):
+                files_payload.append(discord.File(fp, filename=fn))
+
         await interaction.response.send_message(
-            content=f"👁️ **Prévia exclusiva de como o post ficará no canal:**{info_arquivos}",
+            content="👁️ **Prévia exclusiva de como o post ficará no canal:**",
             embed=embed_previa,
+            files=files_payload,
             ephemeral=True
         )
 
@@ -613,7 +640,7 @@ class PainelView(discord.ui.View):
                             if os.path.exists(fp):
                                 files_payload.append(discord.File(fp, filename=fn))
 
-                        avatar_url = interaction.client.user.display_avatar.url if interaction.client.user else None
+                        avatar_url = self.avatar_webhook or (interaction.client.user.display_avatar.url if interaction.client.user else None)
                         await webhook.send(
                             embed=embed_to_send,
                             files=files_payload,
