@@ -20,6 +20,8 @@ load_dotenv()
 
 # Obtém o token do Discord
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+if DISCORD_TOKEN:
+    DISCORD_TOKEN = DISCORD_TOKEN.strip().strip('"').strip("'")
 
 # Configuração dos Intents
 # IMPORTANTE: message_content = True é obrigatório no discord.py 2.0+ para comandos com prefixo!
@@ -105,7 +107,7 @@ async def on_ready():
     print(f"🤖 Nome: {bot.user.name}#{bot.user.discriminator}")
     print(f"🆔 ID: {bot.user.id}")
     print(f"🌐 Servidores Conectados: {len(bot.guilds)}")
-    print(f"⚡ Prefixo de comandos: '!' (Ex: !nuke)")
+    print(f"⚡ Prefixo de comandos: '!' (Ex: !nuke, !painel)")
     print("=" * 50)
 
 
@@ -245,7 +247,465 @@ async def on_command_error(ctx: commands.Context, error: commands.CommandError):
     if isinstance(error, (commands.CommandOnCooldown, commands.MissingPermissions, commands.NoPrivateMessage)):
         # Já tratados pelo handler específico do comando
         return
-    print(f"[ERRO GLOBAL]: {error}", file=sys.stderr)
+# ==============================================================================
+# SISTEMA DO PAINEL INTERATIVO DE POSTAGEM E MATERIAIS (!painel)
+# ==============================================================================
+
+ARQUIVOS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "arquivos")
+os.makedirs(ARQUIVOS_DIR, exist_ok=True)
+
+
+def get_available_files() -> list:
+    """Retorna a lista de arquivos presentes na pasta 'arquivos/'."""
+    if not os.path.exists(ARQUIVOS_DIR):
+        return []
+    files = []
+    for f in sorted(os.listdir(ARQUIVOS_DIR)):
+        full_path = os.path.join(ARQUIVOS_DIR, f)
+        if os.path.isfile(full_path) and not f.startswith("."):
+            files.append(f)
+    return files
+
+
+def format_file_size(size_in_bytes: int) -> str:
+    """Formata o tamanho do arquivo em B, KB ou MB."""
+    if size_in_bytes < 1024:
+        return f"{size_in_bytes} B"
+    elif size_in_bytes < 1024 * 1024:
+        return f"{size_in_bytes / 1024:.1f} KB"
+    else:
+        return f"{size_in_bytes / (1024 * 1024):.2f} MB"
+
+
+def parse_color_choice(color_input: str) -> discord.Color:
+    """Converte nome de cor ou código hexadecimal em discord.Color."""
+    if not color_input:
+        return discord.Color.from_rgb(88, 101, 242)
+
+    val = color_input.strip().lower()
+    color_map = {
+        "azul": discord.Color.blue(),
+        "blue": discord.Color.blue(),
+        "roxo": discord.Color.purple(),
+        "purple": discord.Color.purple(),
+        "verde": discord.Color.green(),
+        "green": discord.Color.green(),
+        "vermelho": discord.Color.red(),
+        "red": discord.Color.red(),
+        "laranja": discord.Color.orange(),
+        "orange": discord.Color.orange(),
+        "dourado": discord.Color.gold(),
+        "amarelo": discord.Color.gold(),
+        "gold": discord.Color.gold(),
+        "preto": discord.Color.dark_theme(),
+        "escuro": discord.Color.dark_theme(),
+        "blurple": discord.Color.blurple(),
+    }
+    if val in color_map:
+        return color_map[val]
+
+    hex_val = val.replace("#", "")
+    if len(hex_val) == 6:
+        try:
+            return discord.Color(int(hex_val, 16))
+        except ValueError:
+            pass
+    return discord.Color.from_rgb(88, 101, 242)
+
+
+class EditarTextoModal(discord.ui.Modal, title="✏️ Configurar Post / Embed"):
+    def __init__(self, view_ref):
+        super().__init__()
+        self.view_ref = view_ref
+
+        self.titulo_input = discord.ui.TextInput(
+            label="Título do Embed",
+            placeholder="Ex: 📚 MÓDULO 1 - CURSO AVANÇADO",
+            default=self.view_ref.titulo,
+            max_length=256,
+            required=True
+        )
+        self.add_item(self.titulo_input)
+
+        self.descricao_input = discord.ui.TextInput(
+            label="Descrição / Conteúdo",
+            style=discord.TextStyle.paragraph,
+            placeholder="Digite o texto detalhado da postagem...",
+            default=self.view_ref.descricao,
+            max_length=4000,
+            required=True
+        )
+        self.add_item(self.descricao_input)
+
+        self.webhook_input = discord.ui.TextInput(
+            label="Nome do Webhook (Autor da postagem)",
+            placeholder="Ex: Central de Conteúdos",
+            default=self.view_ref.nome_webhook,
+            max_length=80,
+            required=False
+        )
+        self.add_item(self.webhook_input)
+
+        self.cor_input = discord.ui.TextInput(
+            label="Cor (azul, roxo, verde, vermelho, #HEX)",
+            placeholder="Ex: roxo ou #5865F2",
+            default=self.view_ref.cor_nome,
+            max_length=20,
+            required=False
+        )
+        self.add_item(self.cor_input)
+
+    async def on_submit(self, interaction: discord.Interaction):
+        self.view_ref.titulo = self.titulo_input.value.strip()
+        self.view_ref.descricao = self.descricao_input.value.strip()
+        self.view_ref.nome_webhook = self.webhook_input.value.strip() or "Central de Conteúdos"
+        self.view_ref.cor_nome = self.cor_input.value.strip() or "roxo"
+        self.view_ref.cor = parse_color_choice(self.view_ref.cor_nome)
+
+        embed = self.view_ref.build_painel_embed()
+        try:
+            await interaction.response.edit_message(embed=embed, view=self.view_ref)
+        except Exception:
+            try:
+                await interaction.message.edit(embed=embed, view=self.view_ref)
+                await interaction.response.defer()
+            except Exception:
+                pass
+
+
+class CanalSelect(discord.ui.ChannelSelect):
+    def __init__(self, view_ref):
+        self.view_ref = view_ref
+        super().__init__(
+            channel_types=[discord.ChannelType.text],
+            placeholder="📢 Selecione os canais de destino...",
+            min_values=1,
+            max_values=25,
+            row=0
+        )
+
+    async def callback(self, interaction: discord.Interaction):
+        self.view_ref.canais_selecionados = self.values
+        embed = self.view_ref.build_painel_embed()
+        await interaction.response.edit_message(embed=embed, view=self.view_ref)
+
+
+class ArquivoSelect(discord.ui.Select):
+    def __init__(self, view_ref, files: list):
+        self.view_ref = view_ref
+        options = []
+        for fn in files[:25]:
+            fp = os.path.join(ARQUIVOS_DIR, fn)
+            size_str = format_file_size(os.path.getsize(fp)) if os.path.exists(fp) else "0 B"
+            is_default = fn in self.view_ref.arquivos_selecionados
+            options.append(
+                discord.SelectOption(
+                    label=fn[:100],
+                    value=fn,
+                    description=f"Tamanho: {size_str}",
+                    default=is_default
+                )
+            )
+
+        super().__init__(
+            placeholder="📁 Selecione os arquivos para anexar...",
+            min_values=0,
+            max_values=len(options),
+            options=options,
+            row=1
+        )
+
+    async def callback(self, interaction: discord.Interaction):
+        self.view_ref.arquivos_selecionados = self.values
+        embed = self.view_ref.build_painel_embed()
+        await interaction.response.edit_message(embed=embed, view=self.view_ref)
+
+
+class PainelView(discord.ui.View):
+    def __init__(self, author_id: int):
+        super().__init__(timeout=900)  # 15 minutos ativo
+        self.author_id = author_id
+
+        # Configurações padrão inspiradas na organização limpa
+        self.titulo = "📚 CURSO APROVAÇÃO AVANÇADA"
+        self.descricao = (
+            "- COMO USAR INFO CC BY; Nt. PARTE 1\n\n"
+            ">>> 1° O QUE É UM BIN, E COMO SE IDENTIFICA UMA BIN?\n\n"
+            "💡 Faça o download dos arquivos anexados abaixo para acessar o material completo."
+        )
+        self.nome_webhook = "Central de Materiais"
+        self.cor_nome = "roxo"
+        self.cor = parse_color_choice(self.cor_nome)
+
+        self.canais_selecionados = []
+        self.arquivos_selecionados = []
+        self.ultimo_status = "Aguardando configuração..."
+
+        # Monta os componentes iniciais
+        self.setup_components()
+
+    def setup_components(self):
+        self.clear_items()
+
+        # Linha 0: Seletor de Canais
+        self.add_item(CanalSelect(self))
+
+        # Linha 1: Seletor de Arquivos (somente se houver arquivos disponíveis na pasta)
+        files = get_available_files()
+        if files:
+            # Se a lista estiver vazia, pré-seleciona todos os arquivos por conveniência
+            if not self.arquivos_selecionados:
+                self.arquivos_selecionados = [f for f in files[:25] if f != "LEIAME.txt"] or files[:25]
+            self.add_item(ArquivoSelect(self, files))
+
+        # Linha 2: Botões de Ação
+        btn_editar = discord.ui.Button(label="Editar Texto", emoji="✏️", style=discord.ButtonStyle.secondary, row=2)
+        btn_editar.callback = self.on_editar_clicked
+        self.add_item(btn_editar)
+
+        btn_atualizar = discord.ui.Button(label="Atualizar Arquivos", emoji="🔄", style=discord.ButtonStyle.secondary, row=2)
+        btn_atualizar.callback = self.on_atualizar_arquivos_clicked
+        self.add_item(btn_atualizar)
+
+        btn_previa = discord.ui.Button(label="Ver Prévia", emoji="👁️", style=discord.ButtonStyle.primary, row=2)
+        btn_previa.callback = self.on_previa_clicked
+        self.add_item(btn_previa)
+
+        btn_disparar = discord.ui.Button(label="Disparar Post", emoji="🚀", style=discord.ButtonStyle.success, row=2)
+        btn_disparar.callback = self.on_disparar_clicked
+        self.add_item(btn_disparar)
+
+        btn_fechar = discord.ui.Button(label="Fechar", emoji="❌", style=discord.ButtonStyle.danger, row=2)
+        btn_fechar.callback = self.on_fechar_clicked
+        self.add_item(btn_fechar)
+
+    async def interaction_check(self, interaction: discord.Interaction) -> bool:
+        if interaction.user.id == self.author_id or interaction.user.guild_permissions.administrator:
+            return True
+        await interaction.response.send_message("❌ Apenas quem abriu este painel pode interagir com ele.", ephemeral=True)
+        return False
+
+    def build_post_embed(self) -> discord.Embed:
+        """Gera o embed formatado que será enviado aos canais finais."""
+        embed = discord.Embed(
+            title=self.titulo,
+            description=self.descricao,
+            color=self.cor
+        )
+        if self.arquivos_selecionados:
+            files_list_str = "\n".join([f"• 📄 `{fn}`" for fn in self.arquivos_selecionados])
+            embed.add_field(
+                name="📦 Arquivos Anexados",
+                value=files_list_str[:1024],
+                inline=False
+            )
+        data_str = get_current_brazil_time_str()
+        embed.set_footer(text=f"{self.nome_webhook} • Publicado em {data_str}")
+        return embed
+
+    def build_painel_embed(self) -> discord.Embed:
+        """Gera a interface do painel de controle interativo."""
+        embed = discord.Embed(
+            title="⚙️ Painel de Postagem & Organização de Materiais",
+            description="Configure as informações abaixo e clique em **Disparar Post** para publicar nos canais escolhidos.",
+            color=discord.Color.from_rgb(88, 101, 242)
+        )
+
+        embed.add_field(name="📌 Título", value=f"`{self.titulo}`", inline=True)
+        embed.add_field(name="🤖 Nome Webhook", value=f"`{self.nome_webhook}`", inline=True)
+        embed.add_field(name="🎨 Cor Embed", value=f"`{self.cor_nome}`", inline=True)
+
+        desc_resumo = self.descricao if len(self.descricao) <= 200 else self.descricao[:200] + "..."
+        embed.add_field(name="📝 Prévia do Texto", value=f"```\n{desc_resumo}\n```", inline=False)
+
+        # Canais selecionados
+        if self.canais_selecionados:
+            canais_str = ", ".join([f"<#{c.id}>" for c in self.canais_selecionados])
+            embed.add_field(name=f"📢 Canais Alvo ({len(self.canais_selecionados)})", value=canais_str[:1024], inline=False)
+        else:
+            embed.add_field(name="📢 Canais Alvo", value="*Nenhum canal selecionado ainda (use o menu acima)*", inline=False)
+
+        # Arquivos selecionados
+        files = get_available_files()
+        if not files:
+            embed.add_field(
+                name="📁 Arquivos na Pasta `arquivos/`",
+                value="*Nenhum arquivo encontrado. Coloque seus PDFs/TXTs na pasta `arquivos/` e clique em 🔄 Atualizar Arquivos*",
+                inline=False
+            )
+        else:
+            if self.arquivos_selecionados:
+                arq_str = ", ".join([f"`{fn}`" for fn in self.arquivos_selecionados])
+                embed.add_field(name=f"📁 Arquivos Selecionados ({len(self.arquivos_selecionados)})", value=arq_str[:1024], inline=False)
+            else:
+                embed.add_field(name="📁 Arquivos Selecionados", value="*Nenhum selecionado (nenhum anexo será enviado)*", inline=False)
+
+        embed.add_field(name="📊 Status", value=f"`{self.ultimo_status}`", inline=False)
+        embed.set_footer(text="Use os menus e botões abaixo para gerenciar a publicação.")
+        return embed
+
+    async def on_editar_clicked(self, interaction: discord.Interaction):
+        modal = EditarTextoModal(self)
+        await interaction.response.send_modal(modal)
+
+    async def on_atualizar_arquivos_clicked(self, interaction: discord.Interaction):
+        files = get_available_files()
+        self.arquivos_selecionados = [f for f in self.arquivos_selecionados if f in files]
+        if not self.arquivos_selecionados and files:
+            self.arquivos_selecionados = [f for f in files[:25] if f != "LEIAME.txt"] or files[:25]
+        self.setup_components()
+        embed = self.build_painel_embed()
+        await interaction.response.edit_message(embed=embed, view=self)
+
+    async def on_previa_clicked(self, interaction: discord.Interaction):
+        embed_previa = self.build_post_embed()
+        info_arquivos = ""
+        if self.arquivos_selecionados:
+            info_arquivos = f"\n📎 **Arquivos anexados ({len(self.arquivos_selecionados)}):** " + ", ".join([f"`{f}`" for f in self.arquivos_selecionados])
+        await interaction.response.send_message(
+            content=f"👁️ **Prévia exclusiva de como o post ficará no canal:**{info_arquivos}",
+            embed=embed_previa,
+            ephemeral=True
+        )
+
+    async def on_disparar_clicked(self, interaction: discord.Interaction):
+        if not self.canais_selecionados:
+            await interaction.response.send_message(
+                "❌ **Nenhum canal selecionado!** Selecione pelo menos 1 canal no menu de canais acima antes de disparar.",
+                ephemeral=True
+            )
+            return
+
+        await interaction.response.defer(ephemeral=True)
+
+        embed_to_send = self.build_post_embed()
+        enviados_sucesso = []
+        falhas = []
+
+        for canal_item in self.canais_selecionados:
+            ch = canal_item
+            if not isinstance(ch, discord.TextChannel):
+                ch = interaction.guild.get_channel(canal_item.id)
+
+            if not ch or not isinstance(ch, discord.TextChannel):
+                falhas.append(f"<#{canal_item.id}> (canal inválido)")
+                continue
+
+            try:
+                sucesso_webhook = False
+                bot_member = interaction.guild.me
+                channel_perms = ch.permissions_for(bot_member)
+
+                # Prioriza envio via Webhook para identidade limpa
+                if channel_perms.manage_webhooks:
+                    try:
+                        webhooks = await ch.webhooks()
+                        webhook = discord.utils.get(webhooks, name=self.nome_webhook)
+                        if not webhook:
+                            webhook = discord.utils.find(lambda w: w.user == interaction.client.user, webhooks)
+                            if not webhook:
+                                webhook = await ch.create_webhook(name=self.nome_webhook, reason="Painel de materiais")
+
+                        # Gera instâncias novas de discord.File para cada canal
+                        files_payload = []
+                        for fn in self.arquivos_selecionados:
+                            fp = os.path.join(ARQUIVOS_DIR, fn)
+                            if os.path.exists(fp):
+                                files_payload.append(discord.File(fp, filename=fn))
+
+                        avatar_url = interaction.client.user.display_avatar.url if interaction.client.user else None
+                        await webhook.send(
+                            embed=embed_to_send,
+                            files=files_payload,
+                            username=self.nome_webhook,
+                            avatar_url=avatar_url
+                        )
+                        sucesso_webhook = True
+                    except Exception as wh_err:
+                        print(f"[Webhook fallback em #{ch.name}]: {wh_err}")
+                        sucesso_webhook = False
+
+                # Fallback: Envio pelo bot caso Webhooks falhem ou não tenham permissão
+                if not sucesso_webhook:
+                    files_payload = []
+                    for fn in self.arquivos_selecionados:
+                        fp = os.path.join(ARQUIVOS_DIR, fn)
+                        if os.path.exists(fp):
+                            files_payload.append(discord.File(fp, filename=fn))
+                    await ch.send(embed=embed_to_send, files=files_payload)
+
+                enviados_sucesso.append(ch.mention)
+            except Exception as e:
+                print(f"[Erro ao disparar para #{ch.name}]: {e}")
+                falhas.append(f"{ch.mention} (`{e}`)")
+
+        # Monta relatório do disparo
+        msg_relatorio = "🚀 **Resultado do Disparo:**\n"
+        if enviados_sucesso:
+            msg_relatorio += f"✅ **Postado com sucesso em ({len(enviados_sucesso)}):** {', '.join(enviados_sucesso)}\n"
+        if falhas:
+            msg_relatorio += f"⚠️ **Falhas ({len(falhas)}):** {', '.join(falhas)}\n"
+
+        self.ultimo_status = f"✅ Disparado para {len(enviados_sucesso)} canal(is) às {get_current_brazil_time_str()}"
+        try:
+            embed_atualizado = self.build_painel_embed()
+            await interaction.message.edit(embed=embed_atualizado, view=self)
+        except Exception:
+            pass
+
+        await interaction.followup.send(msg_relatorio, ephemeral=True)
+
+    async def on_fechar_clicked(self, interaction: discord.Interaction):
+        for item in self.children:
+            item.disabled = True
+        self.stop()
+        embed = self.build_painel_embed()
+        embed.title = "🔒 Painel Fechado"
+        embed.description = "Este painel foi encerrado. Para abrir novamente, digite `!painel`."
+        await interaction.response.edit_message(embed=embed, view=self)
+
+
+@bot.command(name="painel")
+@commands.guild_only()
+async def painel(ctx: commands.Context):
+    """
+    Abre o painel interativo de postagens e envio de materiais para múltiplos canais.
+    Permite anexar arquivos, escolher canais, editar textos e disparar via Webhook.
+    """
+    user_perms = ctx.author.guild_permissions
+    if not (user_perms.administrator or user_perms.manage_guild or user_perms.manage_messages or user_perms.manage_channels):
+        await ctx.send("❌ **Acesso negado:** Você precisa de permissão de Administrador ou Gerenciar Mensagens para abrir o painel.")
+        return
+
+    # Se o usuário enviou arquivos anexados junto com o comando !painel, salva automaticamente
+    if ctx.message.attachments:
+        salvos = []
+        for att in ctx.message.attachments:
+            caminho_salvar = os.path.join(ARQUIVOS_DIR, att.filename)
+            try:
+                await att.save(caminho_salvar)
+                salvos.append(att.filename)
+            except Exception as e:
+                print(f"[Erro ao salvar anexo {att.filename}]: {e}")
+        if salvos:
+            print(f"[Painel] {len(salvos)} arquivo(s) salvo(s) via anexo do !painel: {salvos}")
+
+    view = PainelView(author_id=ctx.author.id)
+    embed = view.build_painel_embed()
+    await ctx.send(embed=embed, view=view)
+
+
+@painel.error
+async def painel_error(ctx: commands.Context, error: commands.CommandError):
+    """Tratamento de erros do comando !painel."""
+    if isinstance(error, commands.NoPrivateMessage):
+        await ctx.send("❌ Este comando só pode ser utilizado dentro de um servidor Discord.")
+    else:
+        print(f"[ERRO no !painel]: {error}", file=sys.stderr)
+        try:
+            await ctx.send(f"❌ Ocorreu um erro ao abrir o painel: `{error}`")
+        except Exception:
+            pass
 
 
 if __name__ == "__main__":
